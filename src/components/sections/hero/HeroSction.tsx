@@ -1,52 +1,109 @@
+"use client";
+
 import { AnimatedTooth } from "@/components/ui/animatedTooth";
 import { Phone, Calendar } from "lucide-react";
-import Image from "next/image";
+import { motion, easeOut } from "framer-motion";
+
+const tags = [
+    { name: "Orthodontie", color: "bg-green-500/20 text-green-400" },
+    { name: "Esthétique", color: "bg-purple-500/20 text-purple-400" },
+    { name: "Implantologie", color: "bg-blue-500/20 text-blue-400" },
+    { name: "Chirurgie dentaire", color: "bg-orange-500/20 text-orange-400" },
+    { name: "Parodontologie", color: "bg-pink-500/20 text-pink-400" },
+    { name: "Prothèses", color: "bg-yellow-500/20 text-yellow-400" },
+    { name: "Blanchiment", color: "bg-gray-500/20 text-gray-400" },
+    { name: "Soins préventifs", color: "bg-teal-500/20 text-teal-400" },
+];
+
+const containerVariants = {
+    hidden: {},
+    show: {
+        transition: {
+            staggerChildren: 0.1,
+        },
+    },
+};
+
+const tagVariants = {
+    hidden: { opacity: 0, y: 10 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: easeOut } },
+};
 
 const HeroSection = () => {
-    const tags = [
-        { name: "Orthodontie", color: "bg-green-500/20 text-green-400" },
-        { name: "Esthétique", color: "bg-purple-500/20 text-purple-400" },
-        { name: "Implantologie", color: "bg-blue-500/20 text-blue-400" },
-        { name: "Chirurgie dentaire", color: "bg-orange-500/20 text-orange-400" },
-        { name: "Parodontologie", color: "bg-pink-500/20 text-pink-400" },
-        { name: "Prothèses", color: "bg-yellow-500/20 text-yellow-400" },
-        { name: "Blanchiment", color: "bg-gray-500/20 text-gray-400" },
-        { name: "Soins préventifs", color: "bg-teal-500/20 text-teal-400" },
-    ];
     return (
-        <div className="flex flex-col-reverse md:flex-row items-center justify-between pb-12 md:h-screen p-4 md:p-10  gap-8 md:gap-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between pb-12 md:h-screen p-4 md:p-10 gap-8 md:gap-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
             <div className="flex flex-col gap-4 w-full md:w-2/3">
-                <h1 className="text-3xl sm:text-xl md:text-5xl font-bold text-center text-[#CCC7C1]">
+                <motion.h1
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="text-3xl sm:text-xl md:text-5xl font-bold text-center text-[#CCC7C1]"
+                >
                     Votre Sourire
                     <span className="text-[#57d3e3]"> Parfait Commence Ici </span>
-                </h1>
-                <h2 className="text-base sm:text-lg text-[#B0AA9F] text-center md:text-left">
-                    Offrez à votre sourire les meilleurs soins dentaires grâce à l’expertise du Dr Chaabani Amine et à une clinique à la pointe de la technologie. Notre équipe bienveillante est dédiée à votre santé bucco-dentaire et à vous offrir un sourire éclatant en toute confiance.
-                </h2>
-                <div className="flex flex-wrap justify-center md:justify-start gap-2 sm:gap-4 mt-4 sm:mt-6">
+                </motion.h1>
+
+                <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="text-base sm:text-lg text-[#B0AA9F] text-center md:text-left"
+                >
+                    Offrez à votre sourire les meilleurs soins dentaires grâce à l’expertise du Dr Nemamcha Oussama 
+                    et à une clinique à la pointe de la technologie. Notre équipe bienveillante est dédiée à votre santé bucco-dentaire et à vous offrir un sourire éclatant en toute confiance.
+                </motion.h2>
+
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="show"
+                    className="flex flex-wrap justify-center md:justify-start gap-2 sm:gap-4 mt-4 sm:mt-6"
+                >
                     {tags.map((tag, index) => (
-                        <div
+                        <motion.div
                             key={index}
+                            variants={tagVariants}
                             className={`font-semibold w-fit px-3 py-1 rounded-xl text-sm sm:text-base ${tag.color}`}
                         >
                             {tag.name}
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center md:justify-start items-center mt-4 sm:mt-6">
-                    <button className="text-[#57d3e3] flex justify-center items-center gap-2 sm:gap-3 border-[1px] border-[#57d3e3] rounded-xl px-4 py-2 hover:bg-[#57d3e3]/10 transition-all duration-300 w-full sm:w-auto">
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center md:justify-start items-center mt-4 sm:mt-6"
+                >
+                    <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="text-[#57d3e3] flex justify-center items-center gap-2 sm:gap-3 border-[1px] border-[#57d3e3] rounded-xl px-4 py-2 hover:bg-[#57d3e3]/10 transition-all duration-300 w-full sm:w-auto"
+                    >
                         <Phone className="size-4 animate-rotate" />
                         <p className="font-bold">Appeler maintenant</p>
-                    </button>
-                    <button className="bg-[#57d3e3] flex justify-center items-center gap-2 sm:gap-3 border-[1px] border-[#57d3e3] rounded-xl px-4 py-2 hover:bg-[#57d3e3]/10 transition-all duration-300 w-full sm:w-auto">
+                    </motion.button>
+
+                    <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="bg-[#57d3e3] flex justify-center items-center gap-2 sm:gap-3 border-[1px] border-[#57d3e3] rounded-xl px-4 py-2 hover:bg-[#57d3e3]/10 transition-all duration-300 w-full sm:w-auto"
+                    >
                         <Calendar className="size-4" />
                         <p className="font-bold">Prendre un rendez-vous</p>
-                    </button>
-                </div>
+                    </motion.button>
+                </motion.div>
             </div>
-            <div className="w-full md:w-1/2 flex justify-center items-center  md:mb-0">
-                    <AnimatedTooth/>
-            </div>
+
+            <motion.div
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="w-full md:w-1/2 flex justify-center items-center md:mb-0"
+            >
+                <AnimatedTooth />
+            </motion.div>
         </div>
     );
 };

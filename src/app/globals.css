@@ -5,7 +5,7 @@
 
 
 :root{
-    @apply bg-[#27374C] text-[#f5f5f5] ;
+    @apply bg-[#27374C] text-[#f5f5f5] overflow-x-hidden;
 }
 
 
