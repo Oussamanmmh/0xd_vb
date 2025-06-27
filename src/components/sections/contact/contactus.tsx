@@ -6,7 +6,7 @@ import { MapPin, Phone } from 'lucide-react'
 export const ContactUs = () => {
   return (
     <div className='bg-[#1C1F20]  flex flex-col items-center justify-center gap-8 '>
-            <div className='flex flex-col items-center justify-center  gap-4  px-20 mt-12 '>
+            <div className='flex flex-col items-center justify-center  gap-4 px-4 md:px-20 mt-12 text-center'>
                         <h1 className='text-4xl font-bold text-[#CCC7C1]'>Contactez le Dr. Nemamcha Oussama</h1>
                         <p className='text-xl text-[#B0AA9F] text-center'>
                            Prêt à planifier votre rendez-vous? Contactez-nous aujourd'hui

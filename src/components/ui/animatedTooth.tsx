@@ -4,10 +4,10 @@ import React from 'react'
 
 export const AnimatedTooth = () => {
     return (
-        <div className="relative w-60  sm:w-80 sm:h-80 md:w-[400px] md:h-[400px] flex items-center justify-center h-full">
+        <div className="relative   sm:w-80 sm:h-80 md:w-[400px] md:h-[400px] flex items-center justify-center my-12 md:m-0">
             
             {/* Animated water ripple circles */}
-            <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute inset-0 pointer-events-none  ">
                 <div className="w-full h-full rounded-full border-4 border-[#0A6C5E] opacity-20 animate-circle-bounce1" />
             </div>
             <div className="absolute inset-[10%] pointer-events-none">
