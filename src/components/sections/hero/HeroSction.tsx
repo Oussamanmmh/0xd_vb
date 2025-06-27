@@ -14,7 +14,7 @@ const HeroSection = () => {
         { name: "Soins préventifs", color: "bg-teal-500/20 text-teal-400" },
     ];
     return (
-        <div className="flex flex-col-reverse md:flex-row items-center justify-between h-screen p-4 md:p-10 mt-6 md:mt-10 gap-8 md:gap-0">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between h-screen p-4 md:p-10  gap-8 md:gap-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
             <div className="flex flex-col gap-4 w-full md:w-2/3">
                 <h1 className="text-3xl sm:text-xl md:text-5xl font-bold text-center text-[#CCC7C1]">
                     Votre Sourire

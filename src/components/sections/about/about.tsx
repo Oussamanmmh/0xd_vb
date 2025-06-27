@@ -3,7 +3,7 @@ import { Award , Heart , Clock , Activity} from 'lucide-react'
 
 export const AboutSection = () => {
   return (
-    <div className='bg-[#181A1B] h-screen flex flex-col items-center justify-center gap-8'>
+    <div className='bg-[#181A1B] h-screen flex flex-col items-center justify-center gap-8 py-12 '>
             <div className='flex flex-col items-center justify-center  gap-4  px-20'>
                 <h1 className='text-4xl text-[#CCC7C1] text-center font-bold'>À Propos du Dr. Nemamcha Oussama</h1>
                 <p className='text-xl text-[#B0AA9F] text-center'>Le Dr. Oussama Nemamcha s engage à offrir des soins dentaires de qualité supérieure dans un cadre moderne et accueillant.</p>
