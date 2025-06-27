@@ -16,7 +16,7 @@ export const ContactUs = () => {
                      <DentalLocationMapSection/>
                 </div>
         <div className="px-6 py-16 bg-gradient-to-br  w-full">
-            <div className='w-full  h-0.5 bg-white mb-6'></div>
+            <div className='w-full  h-0.5 bg-gray-500 mb-6'></div>
             <div className="max-w-2xl mx-auto text-center ">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
                 Dr. Nemamcha Oussama
