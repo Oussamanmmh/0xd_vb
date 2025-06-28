@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import LanguageSelector from "@/components/mode/lang";
-import ThemeToggle from "@/components/mode/theme";
 
 const poppins = Poppins({
   variable: "--font-poppins",
