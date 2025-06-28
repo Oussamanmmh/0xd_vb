@@ -18,7 +18,7 @@ export const AboutSection = () => {
                                         </div>
                                         <div>  
                                           
-                                                <h2 className='text-lg font-semibold'>Soins d'Expert</h2>
+                                                <h2 className='text-lg font-semibold'>Soins d&lsquo;Expert</h2>
                                                 <p className='text-[#B0AA9F] '>Le Dr. Oussama Nemamcha est un expert en dentisterie.</p>
                                         </div>
 

@@ -24,7 +24,7 @@ export default function LanguageSelector() {
   };
 
   return (
-    <div className="fixed top-4 right-4 z-50">
+    <div className="fixed top-4 left-4 z-50">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center justify-between w-32 px-4 py-3 bg-gray-900 text-white rounded-lg border border-gray-700 hover:bg-gray-800 transition-colors"

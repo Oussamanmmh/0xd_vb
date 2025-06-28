@@ -31,7 +31,7 @@ const App = ({children }:{children:React.ReactNode}) => {
     );
   }    
   return (
-     <DentalLoadingScreen progress={progress} isLoading={isLoading} />
+     <DentalLoadingScreen progress={progress}  />
   )
 }
 

@@ -2,7 +2,7 @@
 import tooth from "../../../public/tooth_smile.png"
 import Image from 'next/image';
 
-export default function DentalLoadingScreen( { progress, isLoading } : { progress: number, isLoading: boolean }) {
+export default function DentalLoadingScreen( { progress } : { progress: number }) {
   
   return (
     <div className="min-h-screen bg-gradient-to-br bg-[#1C1F20]  relative overflow-hidden flex items-center justify-center">
@@ -56,7 +56,7 @@ export default function DentalLoadingScreen( { progress, isLoading } : { progres
         </p>
         
         <p className="text-lg text-slate-300 mb-12 animate-fade-in" style={{animationDelay: '1s'}}>
-          Welcome to Dr. Nemamcha's clinic!
+          Welcome to Dr. Nemamcha&lsquo;s clinic!
         </p>
 
         {/* Progress Bar */}

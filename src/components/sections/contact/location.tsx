@@ -150,7 +150,7 @@ export default function DentalLocationMapSection() {
             }`}
           >
             <Navigation className="w-5 h-5" />
-            <span>Obtenir l'Itinéraire</span>
+            <span>Obtenir l&apos;Itinéraire</span>
           </button>
           
           <button

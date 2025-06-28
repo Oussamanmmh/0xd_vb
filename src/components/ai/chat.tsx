@@ -45,7 +45,7 @@ export default function DentalChatbot() {
         ]);
       }, 400);
     }
-  }, [isOpen]);
+  }, [isOpen , messages.length]);
 
   const toggleChat = () => {
     if (isOpen) {
@@ -181,7 +181,7 @@ export default function DentalChatbot() {
   return (
     <>
       {/* Floating Button */}
-      <div className="fixed bottom-12 right-6 z-50">
+      <div className="fixed bottom-14 right-6 z-50">
         <button
           onClick={toggleChat}
           className="bg-teal-500 hover:bg-teal-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110"
@@ -193,18 +193,18 @@ export default function DentalChatbot() {
       {/* Chat Window */}
       {isOpen && (
         <div
-           className={`fixed bottom-24 right-6 sm:bottom-24 sm:right-6 left-4 right-4 sm:left-auto sm:right-6 
-          h-[80vh] sm:h-[32rem] bg-[#181A1B] text-white rounded-2xl shadow-2xl z-40 
-          flex flex-col border border-gray-800 transition-all duration-200 ease-in-out 
-          ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
-        >
+    className={`fixed bottom-24  sm:bottom-24  left-4 right-4 sm:left-auto sm:right-6 
+      h-[80vh] sm:h-[32rem] bg-[#181A1B] text-white rounded-2xl shadow-2xl z-40 
+      flex flex-col border border-gray-800 transition-all duration-200 ease-in-out 
+      ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
+  >
           {/* Header */}
           <div className="bg-gradient-to-r from-teal-500 to-teal-600 text-white p-4 rounded-t-2xl flex items-center gap-3">
             <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
               <Smile className="text-teal-500" size={20} />
             </div>
             <div>
-              <h3 className="font-semibold">Dr. Nemamcha's Assistant</h3>
+              <h3 className="font-semibold">Dr. Nemamcha&lsquo;s Assistant</h3>
               <div className="flex items-center gap-1 text-teal-100">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                 <span className="text-sm">Online</span>
