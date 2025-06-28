@@ -52,11 +52,11 @@ export default function DentalLoadingScreen( { progress } : { progress: number }
         </h1>
         
         <p className="text-xl md:text-2xl text-teal-300 mb-8 animate-fade-in font-bold" style={{animationDelay: '0.5s'}}>
-          Dental Excellence Guelma , Algerie 
+          Dentiste d&lsquo;excellence à Guelma, Algérie
         </p>
         
         <p className="text-lg text-slate-300 mb-12 animate-fade-in" style={{animationDelay: '1s'}}>
-          Welcome to Dr. Nemamcha&lsquo;s clinic!
+          BienVenue Chez Dr. Nemamcha&lsquo;s clinic!
         </p>
 
         {/* Progress Bar */}
