@@ -3,6 +3,8 @@
 import { AnimatedTooth } from "@/components/ui/animatedTooth";
 import { Phone, Calendar } from "lucide-react";
 import { motion, easeOut } from "framer-motion";
+import { useLanguage } from "@/context/langage-context";
+import { content } from "@/lib/content";
 
 const tags = [
     { name: "Orthodontie", color: "bg-green-500/20 text-green-400" },
@@ -30,6 +32,9 @@ const tagVariants = {
 };
 
 const HeroSection = () => {
+    const {language } = useLanguage();
+    const t = content[language].hero;
+    const s = content[language].services;
     return (
         <div className="flex flex-col-reverse md:flex-row items-center justify-between pb-12 md:h-screen p-4 md:p-10 gap-8 md:gap-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
             <div className="flex flex-col gap-4 w-full md:w-2/3">
@@ -37,20 +42,21 @@ const HeroSection = () => {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    className="text-3xl sm:text-xl md:text-5xl font-bold text-center text-[#CCC7C1]"
+                    className="text-3xl sm:text-xl md:text-6xl font-bold text-center text-[#CCC7C1]"
                 >
-                    Votre Sourire
-                    <span className="text-[#57d3e3]"> Parfait Commence Ici </span>
+                    {t.title}
+                    <br />
+                    <span className="text-[#57d3e3]">{t.stitle}</span>
                 </motion.h1>
 
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="text-base sm:text-lg text-[#B0AA9F] text-center md:text-left"
+                    className={`text-base sm:text-lg text-[#B0AA9F] text-center ${language === 'ar' ? 'md:text-right' : 'md:text-left'} font-semibold`}
                 >
-                    Offrez à votre sourire les meilleurs soins dentaires grâce à l’expertise du Dr Nemamcha Oussama 
-                    et à une clinique à la pointe de la technologie. Notre équipe bienveillante est dédiée à votre santé bucco-dentaire et à vous offrir un sourire éclatant en toute confiance.
+                    {t.subtitle}
+                    <br />
                 </motion.h2>
 
                 <motion.div
@@ -65,7 +71,7 @@ const HeroSection = () => {
                             variants={tagVariants}
                             className={`font-semibold w-fit px-3 py-1 rounded-xl text-sm sm:text-base ${tag.color}`}
                         >
-                            {tag.name}
+                            {s.quickServices[index] || tag.name}
                         </motion.div>
                     ))}
                 </motion.div>
@@ -82,7 +88,7 @@ const HeroSection = () => {
                         className="text-[#57d3e3] flex justify-center items-center gap-2 sm:gap-3 border-[1px] border-[#57d3e3] rounded-xl px-4 py-2 hover:bg-[#57d3e3]/10 transition-all duration-300 w-full sm:w-auto"
                     >
                         <Phone className="size-4 animate-rotate" />
-                        <p className="font-bold">Appeler maintenant</p>
+                        <p className="font-bold">{t.cta.call}</p>
                     </motion.button>
 
                     <motion.button
@@ -91,7 +97,7 @@ const HeroSection = () => {
                         className="bg-[#57d3e3] flex justify-center items-center gap-2 sm:gap-3 border-[1px] border-[#57d3e3] rounded-xl px-4 py-2 hover:bg-[#57d3e3]/10 transition-all duration-300 w-full sm:w-auto"
                     >
                         <Calendar className="size-4" />
-                        <p className="font-bold">Prendre un rendez-vous</p>
+                        <p className="font-bold">{t.cta.appointment}</p>
                     </motion.button>
                 </motion.div>
             </div>

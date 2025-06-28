@@ -1,32 +1,13 @@
 "use client";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { useLanguage } from "@/context/langage-context";
+import { content } from "@/lib/content";
 
 export default function DentalFAQSection() {
   const [openAccordion, setOpenAccordion] = useState(0);
-
-  const faqs = [
-    {
-      question: "À quelle fréquence dois-je consulter le dentiste?",
-      answer: "Nous recommandons de consulter le dentiste tous les 6 mois pour des nettoyages et examens réguliers. Cependant, certains patients peuvent avoir besoin de visites plus fréquentes selon leurs besoins de santé bucco-dentaire."
-    },
-    {
-      question: "Acceptez-vous les assurances?",
-      answer: "Oui, nous acceptons la plupart des assurances dentaires. Notre équipe peut vous aider à comprendre votre couverture et maximiser vos bénéfices. N'hésitez pas à nous contacter pour vérifier si votre assurance est acceptée."
-    },
-    {
-      question: "À quoi dois-je m'attendre lors de ma première visite?",
-      answer: "Lors de votre première visite, nous effectuerons un examen complet de votre santé bucco-dentaire, incluant des radiographies si nécessaire. Nous discuterons de vos antécédents médicaux, de vos préoccupations et établirons un plan de traitement personnalisé selon vos besoins."
-    },
-    {
-      question: "Les traitements dentaires sont-ils douloureux?",
-      answer: "Nous utilisons des techniques modernes d'anesthésie locale pour minimiser l'inconfort pendant les procédures. La plupart de nos patients signalent peu ou pas de douleur. Nous discutons toujours des options de gestion de la douleur avant tout traitement."
-    },
-    {
-      question: "Combien de temps durent les implants dentaires?",
-      answer: "Avec des soins appropriés, les implants dentaires peuvent durer toute une vie. Ils ont un taux de succès de plus de 95% et constituent la solution la plus durable pour remplacer les dents manquantes. Un bon entretien et des visites régulières sont essentiels pour leur longévité."
-    }
-  ];
+  const {language} =  useLanguage()
+  const t = content[language].faq
 
   const toggleAccordion = (index: number) => {
     setOpenAccordion(openAccordion === index ? -1 : index);
@@ -38,16 +19,16 @@ export default function DentalFAQSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Questions Fréquemment Posées
+            {t.title}
           </h2>
           <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-            Trouvez des réponses aux questions courantes sur nos services dentaires et notre pratique
+            {t.subtitle}
           </p>
         </div>
 
         {/* FAQ Accordion */}
         <div className="space-y-4">
-          {faqs.map((faq, index) => (
+          {t.questions.map((faq, index) => (
             <div
               key={index}
               className="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden transition-all duration-700 hover:border-emerald-500/50"

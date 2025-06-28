@@ -1,11 +1,15 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Calendar, Phone, X } from "lucide-react";
+import { content } from "@/lib/content";
+import { useLanguage } from "@/context/langage-context";
 
 export default function StickyAppointmentBar() {
   const [isVisible, setIsVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isHidden, setIsHidden] = useState(false);
+  const {language} = useLanguage();
+  const t = content[language].hero
 
   useEffect(() => {
     if (typeof window !== "undefined" && localStorage.getItem("stickyBarClosed") === "true") {
@@ -60,7 +64,7 @@ export default function StickyAppointmentBar() {
           <div className="hidden sm:flex items-center gap-3">
             <div className="w-2 h-2 bg-teal-400 rounded-full" />
             <span className="text-white font-medium text-sm sm:text-base">
-              Book Appointment
+              {t.cta.appointment}
             </span>
           </div>
 
@@ -68,12 +72,12 @@ export default function StickyAppointmentBar() {
           <div className="flex flex-wrap justify-center sm:justify-end items-center gap-3">
             <button className="flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg transition duration-200 text-sm sm:text-base">
               <Calendar size={16} />
-              <span className="hidden xs:inline">Book Appointment</span>
+              <span className="hidden md:inline">{t.cta.appointment}</span>
             </button>
 
             <button className="flex items-center gap-2 bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-lg transition duration-200 text-sm sm:text-base">
               <Phone size={16} />
-              <span className="hidden xs:inline">Call Now</span>
+              <span className="hidden md:inline">{t.cta.call}</span>
             </button>
 
             <button

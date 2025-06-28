@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import LanguageSelector from "@/components/mode/lang";
+import { LanguageProvider } from "@/context/langage-context";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -10,7 +11,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Nemamcha Oussama - Dentiste",
+  title: "Dr.Nemamcha Oussama | Dentiste",
   description: "Bienvenue sur le site du Dr. Nemamcha Oussama, votre dentiste de confiance à Guelma. Découvrez nos services dentaires de qualité supérieure et prenez rendez-vous dès aujourd'hui.",
   icons: {
     icon: '/tooth_smile.png',
@@ -43,8 +44,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} antialiased`}>
-        <LanguageSelector/>
-        {children}
+        <LanguageProvider>
+            <LanguageSelector/>
+            {children}
+        </LanguageProvider>
       </body>
     </html>
   );

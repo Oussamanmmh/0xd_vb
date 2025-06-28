@@ -1,8 +1,13 @@
 
+"use client" ;
+import { useLanguage } from "@/context/langage-context";
 import tooth from "../../../public/tooth_smile.png"
 import Image from 'next/image';
+import { content } from "@/lib/content";
 
 export default function DentalLoadingScreen( { progress } : { progress: number }) {
+  const {language} = useLanguage(); 
+  const t = content[language].header
   
   return (
     <div className="min-h-screen bg-gradient-to-br bg-[#1C1F20]  relative overflow-hidden flex items-center justify-center">
@@ -48,15 +53,15 @@ export default function DentalLoadingScreen( { progress } : { progress: number }
 
         {/* Text Content */}
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 animate-fade-in">
-          Dr. Nemamcha Oussama
+          {t.title}
         </h1>
         
         <p className="text-xl md:text-2xl text-teal-300 mb-8 animate-fade-in font-bold" style={{animationDelay: '0.5s'}}>
-          Dentiste d&lsquo;excellence à Guelma, Algérie
+          {t.subtitle}
         </p>
         
         <p className="text-lg text-slate-300 mb-12 animate-fade-in" style={{animationDelay: '1s'}}>
-          BienVenue Chez Dr. Nemamcha&lsquo;s clinic!
+         {t.welcome}
         </p>
 
         {/* Progress Bar */}
